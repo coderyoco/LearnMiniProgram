@@ -1,3 +1,21 @@
 <!--pages/home/home.wxml-->
-<text class="title">pages/home/home.wxml</text>
-<button size="mini">按钮</button>
+
+<!-- 获取用户信息 -->
+<button open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">获取权限</button>
+
+<!-- 显示用户信息 -->
+<open-data type="userNickName"></open-data>
+
+<view bindtap="handleViewClick">{{message}}</view>
+
+<view wx:for="{{list}}" wx:key="key">{{item}}</view>
+<view wx:for="{{list}}" wx:key="key">{{item}}</view>
+<view wx:for="{{list}}" wx:key="key">{{item}}</view>
+<view wx:for="{{list}}" wx:key="key">{{item}}</view>
+<view wx:for="{{list}}" wx:key="key">{{item}}</view>
+<view wx:for="{{list}}" wx:key="key">{{item}}</view>
+<view wx:for="{{list}}" wx:key="key">{{item}}</view>
+<view wx:for="{{list}}" wx:key="key">{{item}}</view>
+<view wx:for="{{list}}" wx:key="key">{{item}}</view>
+<view wx:for="{{list}}" wx:key="key">{{item}}</view>
+

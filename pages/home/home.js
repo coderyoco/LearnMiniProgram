@@ -1,66 +1,64 @@
-// pages/home/home.js
+//getApp() 获取App()产生的实例对象
+// const app = getApp();
+// const name = app.globalData.name;
+// const age = app.globalData.age;
+
+//注册一个页面
+//页面也有自己的生命周期函数
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+  //------------2.初始化数据------------
   data: {
+    message: '哈哈哈',
+    list: []
+  },
+  //------------1.监听页面的生命周期函数------------
+  //页面被加载出来
+  onLoad() {
+    const _this = this;
+    wx.request({
+      url: 'http://123.207.32.32:8000/recommend',
+      success: function(res) {
+        console.log(res);
+        const data = res.data
+        _this.setData({
+          list: data
+        })
+      }
+    })
+  },
+  //当页面显示出来时
+  onShow() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  //当页面初次完成渲染时
+  onReady() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  //当页面被隐藏时
+  onHide() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  //当页面被销毁
+  onUnload() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  //------------3.监听wxml中相关的一些事件------------
+  handleGetUserInfo(event) {
+    console.log(event);
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleViewClick() {
+    console.log('哈哈哈被点击了');
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  //------------4.监听其他事件------------
+  //监听页面滚动
+  onPageScroll(obj) {
+    console.log(obj);
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  //监听页面滚动到底部
+  onReachBottom() {
+    console.log('页面滚动到底部');
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onPullDownRefresh() {
+    console.log('下拉刷新事件');
   }
 })
