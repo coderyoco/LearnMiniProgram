@@ -1,0 +1,49 @@
+<!-- 1.设置样式三种方式 -->
+<!-- 行内样式/内联样式 -->
+<view style="font-size: 30px; color: red;">哈哈哈</view>
+
+<!-- 页面样式 -->
+<view class="item">呵呵呵</view>
+
+<!-- 全局样式 -->
+<view class="container">嘿嘿嘿</view>
+
+<!-- 多种样式同事存在 -->
+<view style="background-color: #f5f5f5;" class="box contain">嘻嘻嘻</view>
+
+<!-- 优先级依次是： 行内样式 > 页面样式 > 全局样式 -->
+
+<!-- 2.wxss中的单位：rpx -->
+<!-- 前端需要进行适配：em/rem/vw/wh -->
+<!-- iphone6中rpx:px的尺寸关系：2:1 -->
+<view class="box1">1</view>
+<view class="box2">2</view>
+ 
+<view class="font1">哈哈哈哈</view>
+<view class="font2">呵呵呵呵</view>
+
+<!-- 3.使用官方样式库 -->
+<view class="weui-search-bar">
+  <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" 
+             class="weui-search-bar__input" 
+             placeholder="搜索" 
+             value="{{inputVal}}" 
+             focus="{{inputShowed}}" 
+             bindinput="inputTyping" />
+      <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+    <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+    </label>
+  </view>
+  <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+</view>
+
+
+

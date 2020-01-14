@@ -1,0 +1,8 @@
+@import './style/box.wxss';
+@import './style/font.wxss';
+@import './style/weui-searchbar.wxss';
+.item {
+  font-size: 30px;
+  color: blue;
+}
+

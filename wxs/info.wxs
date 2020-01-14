@@ -1,0 +1,17 @@
+var message = 'Hello World';
+
+var name = '孙悟空';
+
+var sum = function (num1, num2) {
+  return num1 + num2;
+}
+
+var test = '大闸蟹';
+
+//commonjs的模块导出的写法
+module.exports = {
+  message: message,
+  name: name,
+  sum: sum,
+  test: test
+}

@@ -1,0 +1,36 @@
+<!-- 1.wxs的定义方式 -->
+<!-- <wxs module="info">
+  var message = 'Hello World';
+
+  var name = '孙悟空';
+
+  var sum = function(num1, num2) {
+    return num1 + num2;
+  }
+
+  var test = '大闸蟹';
+
+  //commonjs的模块导出的写法
+  module.exports = {
+    message: message,
+    name: name,
+    sum: sum,
+    test: test
+  }
+</wxs> -->
+
+<!-- 不能使用绝对路径导入，必须使用相对路径 -->
+<wxs src="../../wxs/info.wxs" module="info"/>
+
+<view>{{info.message}}</view>
+<view>{{info.name}}</view>
+<view>{{info.sum(20,60)}}</view>
+
+<!-- 2.wxs的实际应用 -->
+<wxs src="../../wxs/format.wxs" module="format" />
+<view>{{format.priceFormat(price, 3)}}</view>
+
+<view>{{format.dataFormat(time, 'yyyy/MM/dd hh:mm:ss')}}</view>
+
+
+
