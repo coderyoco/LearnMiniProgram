@@ -1,66 +1,70 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    titles: ['衣服', '裤子', '鞋子', '袜子']
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleBtnClick() {
+    console.log('按钮点击');
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  //手指开始点击屏幕时
+  handleTouchStart() {
+    console.log('handleTouchStart');
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  //手指在屏幕上移动时
+  handleTouchMove() {
+    console.log('handleTouchMove');
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  //手指离开屏幕时
+  handleTouchEnd() {
+    console.log('handleTouchEnd');
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleTap() {
+    console.log('handleTap');
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  //手指长按超过350毫秒时
+  handleLongPress() {
+    console.log('handleLongPress');
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  //touch和changetouch的区别
+  //touch是记录当前有几根手指在屏幕上触摸，而changeTouch是记录当前屏幕上的手指变化有几根
+  handleEventClick(event) {
+    console.log("-----", event);
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  handleEventEnd(event) {
+    console.log("+++++", event);
+  },
+  //target和currentTarget的区别
+  //currentTarget记录的是触发事件的view,target记录的是产生事件的view
+  handleInner(event) {
+    console.log(event);
+  },
+  handleOuter(event) {
+    console.log(event);
+  },
+  handleItemClick(event) {
+    console.log(event);
+    const dataset = event.currentTarget.dataset;
+    const item = dataset.item;
+    const index = dataset.index;
+    console.log(item, index);
+  },
+  //---------------事件冒泡和事件捕获
+  handleCaptureView1() {
+    console.log('handleCaptureView1');
+  },
+  handleCaptureView2() {
+    console.log('handleCaptureView2');
+  },
+  handleCaptureView3() {
+    console.log('handleCaptureView3');
+  },
+  handleBindView1() {
+    console.log('handleBindView1');
+  },
+  handleBindView2() {
+    console.log('handleBindView2');
+  },
+  handleBindView3() {
+    console.log('handleBindView3');
+  },
 })
