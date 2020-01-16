@@ -1,0 +1,7 @@
+<!--pages/comment/comment.wxml-->
+<text>pages/comment/comment.wxml</text>
+
+<!-- 直接返回首页 -->
+<navigator open-type="navigateBack" delta="2">返回首页</navigator>
+
+<button size="mini" bind:tap="handleBackDetail">返回到评论页</button>
