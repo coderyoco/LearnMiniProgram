@@ -1,0 +1,4 @@
+/* pages/tabbar/tabbar.wxss */
+.line {
+  border-bottom: 2px solid red;
+}

@@ -1,3 +1,81 @@
-<!--pages/home/home.wxml-->
-<text class="title">pages/home/home.wxml</text>
-<button size="mini">按钮</button>
+<!-- pages/home/home.wxml -->
+<view class="title">Hello World</view>
+
+<!-- 1.使用自定义组件的基本使用 -->
+<!-- <my-cpn></my-cpn>
+<my-cpn></my-cpn>
+<my-cpn/> -->
+
+<!-- 2.自定义组件样式的细节 -->
+<!-- 如何使组件中的样式对引用界面产生影响用：
+     必须给Components中添加options属性：styleIsolation: "shared"/"apply-shared" 
+-->
+<!-- <my-style/> -->
+
+<!-- 3.自定义组件传递数据/样式 -->
+<!-- 向组件传递数据：properties: {} -->
+<!-- 向组件传递样式：externalClasses: ['titleclass'] -->
+<my-prop title="哈哈哈" titleclass="red"/>
+<my-prop title="呵呵呵" titleclass="green"/>
+<my-prop titleclass="yellow"/>
+
+<!-- 4.自定义事件传递 -->
+<!--  this.triggerEvent('事件名称', {}, {}) -->
+<view>当前数字：{{count}}</view>
+<my-event bind:increment="handleIncrement"/>
+
+<!-- 5.练习 -->
+<w-tab-control titles="{{['衣服', '裤子', '鞋子']}}" bind:handleItem="handleItemClick"/>
+
+<!-- 6. 从外部修改自定义组件中的数据-->
+<button size="mini" bind:tap="handleIncrementCpn">依次增加10</button>
+<my-sel class="sel-class"/>
+
+<!-- 7.插槽：slot的使用 -->
+<view>------------------------------------</view>
+<!-- 7.1单个插槽的使用 -->
+<my-slot>
+  <button size="mini">我是按钮</button>
+</my-slot>
+<my-slot>
+  <text>哈哈哈哈是否</text>
+</my-slot>
+<my-slot>
+  <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579093040503&di=07447cdc91a9b0341544dec21ffb0ad0&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D264175563%2C1523946490%26fm%3D214%26gp%3D0.jpg"/>
+</my-slot>
+<my-slot>
+  <slider value="60"></slider>
+</my-slot>
+
+<!-- 7.2多个插槽的使用 -->
+<view>----------多个插槽的使用------------</view>
+<!-- 
+  1.给每一个插槽起名字：name属性
+  2.必须给Components中添加options属性：multipleSlots: true
+ -->
+ <my-mslot>
+  <text slot="slot2">我是内容,哈哈哈哈哈哈哈哈哈</text>
+  <button size="mini" slot="slot1">我是插入的按钮</button>
+  <slider slot="slot3"></slider>
+ </my-mslot>
+
+ <!-- 8.组件的生命周期 -->
+ <button size="mini" bind:tap="handleChangeShow">切换显示</button>
+<block>
+  <my-mslot wx:if="{{isShow}}">
+    <text slot="slot2">我是内容,哈哈哈哈哈哈哈哈哈</text>
+    <button size="mini" slot="slot1">我是插入的按钮</button>
+    <slider slot="slot3"></slider>
+ </my-mslot>
+</block>
+
+
+
+
+
+
+
+
+
+
+

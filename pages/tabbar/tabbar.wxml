@@ -1,0 +1,2 @@
+<!--pages/tabbar/tabbar.wxml-->
+<tab-control bind:handleItem="handleItemClick" class=""/>
